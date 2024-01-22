@@ -1,0 +1,23 @@
+
+{                                                                                
+  "name": "be.eloistree.transparentoverlayerwindow",                              
+  "displayName": "Transparent Window Overlay",                        
+  "version": "0.0.1",                         
+  "unity": "2018.1",                             
+  "unityRelease": "",                             
+  "description": "This tool allows to do overlayer application in Unity3D for stream or other cool stuffs to dispplay in screen.",                         
+  "keywords": ["Script","Tool"],                       
+  "dependencies":{},     
+  "relatedPackages":{},     
+  "samples" : [],     
+  "author" : {
+"name":"Eloi Stree",
+"mail":"",
+"url":""},     
+  "repository":{
+"type":"Git",
+"url":"https://github.com/EloiStree/2024_01_22_TransparentWindowOverlay.git",
+"footprint":"",
+"revision":""},     
+  "category": "Script"                   
+} 
