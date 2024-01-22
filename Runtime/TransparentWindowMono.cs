@@ -7,8 +7,9 @@ public class TransparentWindowMono : MonoBehaviour
     public string m_sourceVideo = "https://www.youtube.com/watch?v=RqgsGaMPZTw";
 
     [TextArea(0, 10)]
-    public string m_devNote = "Don't forget too: " +
-        "\n- Disable DXGI flip D3D11 in the Resolution andd presentation Player menu";
+    public string m_devNote = "Don't forget too: " 
+        +"\n- Disable DXGI flip D3D11 in the Resolution andd presentation Player menu"
+        +"\n- Set the camera color to 0 0 0 0 in the background";
 
     [ContextMenu("Open the video online of Code Monkey")]
     public void OpenVideoHelpSource() { Application.OpenURL(m_sourceVideo); }
