@@ -52,8 +52,4 @@ public class TransparentWindowMono : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        // Add your logic here for handling mouse interactions or other updates
-    }
 }
