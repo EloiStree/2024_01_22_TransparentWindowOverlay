@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2583336780675087122}
   - component: {fileID: 7218044938267219249}
+  - component: {fileID: 7944754838022491750}
+  - component: {fileID: 3113243241898643781}
   m_Layer: 0
   m_Name: Turn unity to over layer
   m_TagString: Untagged
@@ -44,6 +46,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4caf23866f55d554994531f802258abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_leftPixel: 200
+  m_topPixel: 200
+  m_width: 512
+  m_height: 512
   m_sourceVideo: https://www.youtube.com/watch?v=RqgsGaMPZTw
   m_devNote: "Don't forget too: \n- Disable DXGI flip D3D11 in the Resolution andd
     presentation Player menu\n- Set the camera color to 0 0 0 0 in the background"
+--- !u!114 &7944754838022491750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6934956257412623480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e434b12e9b1d92a4cb59022fa4d4ae3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_useOffset: 0
+  m_offsetXPixel: 1
+  m_offsetYPixel: 9
+--- !u!114 &3113243241898643781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6934956257412623480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9873a1f67a8ad40a0b560092a5a001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideOnStart: 1

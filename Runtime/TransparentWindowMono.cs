@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class TransparentWindowMono : MonoBehaviour
 {
-    public string m_sourceVideo = "https://www.youtube.com/watch?v=RqgsGaMPZTw";
 
-    [TextArea(0, 10)]
-    public string m_devNote = "Don't forget too: " 
-        +"\n- Disable DXGI flip D3D11 in the Resolution andd presentation Player menu"
-        +"\n- Set the camera color to 0 0 0 0 in the background";
-
-    [ContextMenu("Open the video online of Code Monkey")]
-    public void OpenVideoHelpSource() { Application.OpenURL(m_sourceVideo); }
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
 
 
     [DllImport("user32.dll")]
@@ -31,12 +25,16 @@ public class TransparentWindowMono : MonoBehaviour
     private const uint WS_EX_LAYERED = 0x00080000;
     private const uint WS_EX_TRANSPARENT = 0x00000020;
     private const uint LWA_COLORKEY = 0x00000001;
+    const int LWA_ALPHA = 0x2;
 
     private IntPtr hWnd;
 
+    private const int GWL_STYLE = -16;
+
+
     private void Start()
     {
-#if !UNITY_EDITOR_
+#if !UNITY_EDITOR
         hWnd = GetActiveWindow();
 
         // Set the window style to layered and transparent
@@ -48,8 +46,40 @@ public class TransparentWindowMono : MonoBehaviour
         // Set the transparency (adjust the alpha value as needed)
         SetLayeredWindowAttributes(hWnd, 0, 128, LWA_COLORKEY);
 #endif
-
     }
 
+
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
+
+   
+    // Define the RECT structure for GetWindowRect function
+    [StructLayout(LayoutKind.Sequential)]
+    public struct RECT
+    {
+        public int Left;
+        public int Top;
+        public int Right;
+        public int Bottom;
+    }
+
+
+
+
+    public string m_sourceVideo = "https://www.youtube.com/watch?v=RqgsGaMPZTw";
+
+    [TextArea(0, 10)]
+    public string m_devNote = "Don't forget too: "
+        + "\n- Disable DXGI flip D3D11 in the Resolution and presentation Player menu" +
+        "\n  - https://youtu.be/RqgsGaMPZTw?t=428"
+        + "\n- Set the camera color to 0 0 0 0 in the background" +
+        "\n  - https://youtu.be/RqgsGaMPZTw?t=454";
+
+  
+
+    [ContextMenu("Open the video online of Code Monkey")]
+    public void OpenVideoHelpSource() { Application.OpenURL(m_sourceVideo); }
 
 }
