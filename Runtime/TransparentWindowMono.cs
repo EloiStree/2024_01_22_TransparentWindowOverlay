@@ -50,9 +50,6 @@ public class TransparentWindowMono : MonoBehaviour
 
 
 
-
-
-    // Import necessary functions from user32.dll
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6934956257412623480
+--- !u!1 &8620909842250653548
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,76 +8,74 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2583336780675087122}
-  - component: {fileID: 7218044938267219249}
-  - component: {fileID: 7944754838022491750}
-  - component: {fileID: 3113243241898643781}
+  - component: {fileID: 6065145321347193920}
+  - component: {fileID: 7868851039093295905}
+  - component: {fileID: 3958834130015090600}
+  - component: {fileID: 8056802421730691654}
   m_Layer: 0
-  m_Name: Turn unity to over layer
+  m_Name: Follow Mouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2583336780675087122
+--- !u!4 &6065145321347193920
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6934956257412623480}
+  m_GameObject: {fileID: 8620909842250653548}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7218044938267219249
+--- !u!114 &7868851039093295905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6934956257412623480}
+  m_GameObject: {fileID: 8620909842250653548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4caf23866f55d554994531f802258abd, type: 3}
+  m_Script: {fileID: 11500000, guid: 80112bebaf9ec774ab20d2584892cd66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_leftPixel: 200
-  m_topPixel: 200
-  m_width: 512
-  m_height: 512
-  m_sourceVideo: https://www.youtube.com/watch?v=RqgsGaMPZTw
-  m_devNote: "Don't forget too: \n- Disable DXGI flip D3D11 in the Resolution andd
-    presentation Player menu\n- Set the camera color to 0 0 0 0 in the background"
---- !u!114 &7944754838022491750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6934956257412623480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e434b12e9b1d92a4cb59022fa4d4ae3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_removeFullScreenAtStart: 1
   m_useOffset: 0
   m_offsetXPixel: 1
-  m_offsetYPixel: 9
---- !u!114 &3113243241898643781
+  m_offsetYPixel: 10
+--- !u!114 &3958834130015090600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6934956257412623480}
+  m_GameObject: {fileID: 8620909842250653548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9873a1f67a8ad40a0b560092a5a001, type: 3}
+  m_Script: {fileID: 11500000, guid: aa7afeb3dd4b5d5488821d29448cb0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hideOnStart: 1
+--- !u!114 &8056802421730691654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8620909842250653548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae28d6e62daa1a45b42e5d663ca0ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sourceVideo: https://www.youtube.com/watch?v=RqgsGaMPZTw
+  m_devNote: "Don't forget too: \n- Disable DXGI flip D3D11 in the Resolution and
+    presentation Player menu\n  - https://youtu.be/RqgsGaMPZTw?t=428\n- Set the camera
+    color to 0 0 0 0 in the background\n  - https://youtu.be/RqgsGaMPZTw?t=454"
