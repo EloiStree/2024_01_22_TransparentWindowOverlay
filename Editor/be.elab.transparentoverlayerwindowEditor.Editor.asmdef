@@ -1,7 +1,7 @@
 
 {                                                                   
-            "name": "be.eloistree.transparentoverlayerwindowEditor",          
-    "references": ["be.eloistree.transparentoverlayerwindow"
+            "name": "be.elab.transparentoverlayerwindowEditor",          
+    "references": ["be.elab.transparentoverlayerwindow"
 ],                                                              
     "optionalUnityReferences": [],                                  
     "includePlatforms": [                                           
