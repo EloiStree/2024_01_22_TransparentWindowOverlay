@@ -1,8 +1,10 @@
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MoveObjectUnderMouseMono : MonoBehaviour
 {
+    public InputActionReference m_mouseInputPosition;
     public float distance = 10f; // Distance to move the object
     public Camera mainCamera; // Reference to the main camera
     public Transform m_targetObject;
@@ -18,16 +20,15 @@ public class MoveObjectUnderMouseMono : MonoBehaviour
         {
             Debug.LogError("Main camera not found. Please assign the main camera to the script.");
         }
+        m_mouseInputPosition.action.Enable();
     }
 
 
     void Update()
     {
+        Vector2 mousePositoin = m_mouseInputPosition.action.ReadValue<Vector2>();
         // Get the current mouse position in screen space
-        Vector3 mousePositionScreen = Input.mousePosition;
-
-        // Set the distance of the object from the camera
-        mousePositionScreen.z = distance;
+        Vector3 mousePositionScreen = new Vector3(mousePositoin.x, mousePositoin.y, distance);
 
         // Convert the mouse position from screen space to world space
         Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);

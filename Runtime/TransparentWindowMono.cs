@@ -31,6 +31,7 @@ public class TransparentWindowMono : MonoBehaviour
 
     private const int GWL_STYLE = -16;
 
+    public byte transparency = 10;
 
     private void Start()
     {
@@ -44,7 +45,7 @@ public class TransparentWindowMono : MonoBehaviour
         SetWindowPos(hWnd, new IntPtr(-1), 0, 0, 0, 0, 0);
 
         // Set the transparency (adjust the alpha value as needed)
-        SetLayeredWindowAttributes(hWnd, 0, 128, LWA_COLORKEY);
+        SetLayeredWindowAttributes(hWnd, 0, transparency, LWA_COLORKEY);
 #endif
     }
 

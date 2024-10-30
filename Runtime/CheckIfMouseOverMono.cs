@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class UI2D_CheckIfMouseOverPanel : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CheckIfMouseOverMono : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-   
         public bool m_isMouseOver = false;
         public UnityEvent m_onMouseEnter;
         public UnityEvent m_onMouseExit;

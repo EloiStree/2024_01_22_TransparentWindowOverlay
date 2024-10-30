@@ -9,6 +9,7 @@ public class TDD_RandomPanelColor : MonoBehaviour
 
     public UnityEvent<Color> ColorChangedEvent;
     public Image[] m_panels;
+    public Renderer[] m_renders;
     public float m_alpha=0.1f;
     
     public void ChangeForRandomColor()
@@ -19,6 +20,12 @@ public class TDD_RandomPanelColor : MonoBehaviour
         {
             if(panel!=null)
             panel.color = randomColor;
+        }
+        
+        foreach (var render in m_renders)
+        {
+            if(render!=null)
+            render.material.color = randomColor;
         }
         ColorChangedEvent.Invoke(randomColor);
     }

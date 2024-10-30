@@ -6,10 +6,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class Fetch3DUnderRealMousePositionMono : MonoBehaviour
 {
-
+    public InputActionReference m_mouseInputPosition;
     public List<MonoBehaviour> m_curent = new List<MonoBehaviour>();
     public List<MonoBehaviour> m_previous = new List<MonoBehaviour>();
     public UnityEvent<MonoBehaviour> m_onImageEnter;
@@ -24,6 +25,10 @@ public class Fetch3DUnderRealMousePositionMono : MonoBehaviour
     public List<MonoBehaviour> m_enter = new List<MonoBehaviour>();
     public List<MonoBehaviour> m_exit = new List<MonoBehaviour>();
 
+    private void Awake()
+    {
+        m_mouseInputPosition.action.Enable();
+    }
     void Update()
     {
         List<GameObject> results = RaycastUI();
@@ -40,32 +45,34 @@ public class Fetch3DUnderRealMousePositionMono : MonoBehaviour
         }
         List<MonoBehaviour> m_enter = m_curent.Except(m_previous).ToList();
         List<MonoBehaviour> m_exit = m_previous.Except(m_curent).ToList();
-        foreach (MonoBehaviour image in m_enter)
+        foreach (MonoBehaviour targetFound in m_enter)
         {
-            if (HasIPointerEnterHandler(image.gameObject, out var list))
+            if (HasIPointerEnterHandler(targetFound.gameObject, out var list))
             {
                 foreach (IPointerEnterHandler handler in list)
                     handler.OnPointerEnter(null);
                 m_lastHasInterface = true;
             }
-            m_onImageEnter.Invoke(image);
-            if (image != null)
-                m_lastEnter = (image);
+            m_onImageEnter.Invoke(targetFound);
+            if (targetFound != null)
+                m_lastEnter = (targetFound);
         }
-        foreach (MonoBehaviour image in m_exit)
+        foreach (MonoBehaviour targetFound in m_exit)
         {
-            if (HasIPointerExitHandler(image.gameObject, out var list))
-            {
-                foreach (IPointerExitHandler handler in list)
-                    handler.OnPointerExit(null);
+            if (targetFound != null) { 
+                if (HasIPointerExitHandler(targetFound.gameObject, out var list))
+                {
+                    foreach (IPointerExitHandler handler in list)
+                        handler.OnPointerExit(null);
 
-                m_lastHasInterface = true;
+                    m_lastHasInterface = true;
+                }
             }
 
-            m_onImageExit.Invoke(image);
+            m_onImageExit.Invoke(targetFound);
 
-            if (image != null)
-                m_lastExit = image;
+            if (targetFound != null)
+                m_lastExit = targetFound;
         }
     }
 
@@ -113,10 +120,13 @@ public class Fetch3DUnderRealMousePositionMono : MonoBehaviour
     List<GameObject> RaycastUI()
     {
 
-        List< GameObject> results = new List<GameObject>();
+            if(m_mouseInputPosition == null)
+            {
+                return new List<GameObject>();
+            }
+            List< GameObject> results = new List<GameObject>();
         
-            // Get the mouse position in screen space
-            Vector3 mousePosition = Input.mousePosition;
+            Vector2 mousePosition = m_mouseInputPosition.action.ReadValue<Vector2>();
 
             // Convert the mouse position to a ray
             Ray ray = Camera.main.ScreenPointToRay(mousePosition);

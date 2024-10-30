@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -403,12 +402,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!81 &961739751
 AudioListener:
   m_ObjectHideFlags: 0
@@ -483,54 +482,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1840139925
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1840139927}
-  - component: {fileID: 1840139926}
-  m_Layer: 0
-  m_Name: Git Giti
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1840139926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840139925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66502db6d7d8367418957c0b2de324c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_gitFolder: []
-  m_gitiFolder:
-  - C:\Life\StreamOverlayer\EloiLabStreamOverlayerWindow\Assets\2024_01_22_TransparentWindowOverlay\.giti
---- !u!4 &1840139927
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840139925}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1568706745228806919
+--- !u!1001 &1303471933
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -538,66 +490,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2583336780675087122, guid: f67a00c65c2def24687cbc7172f50f0b,
+    - target: {fileID: 6065145321347193920, guid: 8988584cb36a1a24c93a721b2c6de69e,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2583336780675087122, guid: f67a00c65c2def24687cbc7172f50f0b,
+    - target: {fileID: 6065145321347193920, guid: 8988584cb36a1a24c93a721b2c6de69e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2583336780675087122, guid: f67a00c65c2def24687cbc7172f50f0b,
+    - target: {fileID: 6065145321347193920, guid: 8988584cb36a1a24c93a721b2c6de69e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2583336780675087122, guid: f67a00c65c2def24687cbc7172f50f0b,
+    - target: {fileID: 6065145321347193920, guid: 8988584cb36a1a24c93a721b2c6de69e,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2583336780675087122, guid: f67a00c65c2def24687cbc7172f50f0b,
+    - target: {fileID: 6065145321347193920, guid: 8988584cb36a1a24c93a721b2c6de69e,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2583336780675087122, guid: f67a00c65c2def24687cbc7172f50f0b,
+    - target: {fileID: 6065145321347193920, guid: 8988584cb36a1a24c93a721b2c6de69e,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2583336780675087122, guid: f67a00c65c2def24687cbc7172f50f0b,
+    - target: {fileID: 6065145321347193920, guid: 8988584cb36a1a24c93a721b2c6de69e,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2583336780675087122, guid: f67a00c65c2def24687cbc7172f50f0b,
+    - target: {fileID: 6065145321347193920, guid: 8988584cb36a1a24c93a721b2c6de69e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2583336780675087122, guid: f67a00c65c2def24687cbc7172f50f0b,
+    - target: {fileID: 6065145321347193920, guid: 8988584cb36a1a24c93a721b2c6de69e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2583336780675087122, guid: f67a00c65c2def24687cbc7172f50f0b,
+    - target: {fileID: 6065145321347193920, guid: 8988584cb36a1a24c93a721b2c6de69e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6934956257412623480, guid: f67a00c65c2def24687cbc7172f50f0b,
+    - target: {fileID: 8620909842250653548, guid: 8988584cb36a1a24c93a721b2c6de69e,
         type: 3}
       propertyPath: m_Name
-      value: Turn unity to over layer Following mouse
+      value: Follow Mouse
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f67a00c65c2def24687cbc7172f50f0b, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 8988584cb36a1a24c93a721b2c6de69e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -605,5 +557,4 @@ SceneRoots:
   - {fileID: 961739753}
   - {fileID: 203844589}
   - {fileID: 464331459}
-  - {fileID: 1568706745228806919}
-  - {fileID: 1840139927}
+  - {fileID: 1303471933}

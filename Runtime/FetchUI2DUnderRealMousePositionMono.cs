@@ -5,11 +5,13 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class FetchUI2DUnderRealMousePositionMono : MonoBehaviour
 {
 
+    public InputActionReference m_mouseInputPosition;
     public List<RaycastResult> results = new List<RaycastResult>();
     public List<Image> m_curentImage = new List<Image>();
     public List<Image> m_previous = new List<Image>();
@@ -25,6 +27,11 @@ public class FetchUI2DUnderRealMousePositionMono : MonoBehaviour
 
     public List<Image> m_enter = new List<Image>();
     public List<Image> m_exit = new List<Image>();
+
+    private void Awake()
+    {
+        m_mouseInputPosition.action.Enable();   
+    }
 
     void Update()
     {
@@ -107,13 +114,16 @@ public class FetchUI2DUnderRealMousePositionMono : MonoBehaviour
         }
         return list.Count>0;
     }
-
     List<RaycastResult> RaycastUI()
     {
+        if (m_mouseInputPosition == null)   {
+            return new List<RaycastResult>();
+        }
+        Vector2 mousePosition = m_mouseInputPosition.action.ReadValue<Vector2>();
         // Create a pointer event data object
         PointerEventData pointerEventData = new PointerEventData(EventSystem.current)
         {
-            position = Input.mousePosition
+            position = mousePosition
         };
 
         // Create a list to store the raycast results
